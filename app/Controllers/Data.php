@@ -273,18 +273,22 @@ class Data extends BaseController
         }
     }
     public function simpan(){
-        
-        if (!$this->validate ([
-            'file' => [
-                'rules' => 'max_size[file,30750]',
-                'errors' => [
-                    'max_size' => 'Ukuran file terlalu besar (maks 30 mb).'
-                ]
-            ]
-        ])) {
-            return redirect()->to('admin-divisi-1')->withInput();
-        };
+        // if (!$this->validate ([
+        //     'data_name' => 'is_unique[list_data.data_name]',            
+        //     'file' => [
+        //         'rules' => 'max_size[file,30750]',
+        //         'errors' => [
+        //             'max_size' => 'Ukuran file terlalu besar (maks 30 mb)'
+        //         ]
+        //     ]
+        // ])) {
+        //     $validation = \Config\Services::validation();
+        //     return redirect()->to('/Data/index_divisi1')->withInput()->with('validation', $validation);
+        // };
+        $divisi = $this->request->getPost("divisi");
         $data_name = $this->request->getPost("data_name");
+        $data_exist = $this->datalist->cari($data_name);
+
         $divisi = $this->request->getPost("divisi");
         $fileData = $this->request->getFile("file");
         $link = $this->request->getPost("link");
@@ -315,7 +319,7 @@ class Data extends BaseController
             }
             catch (\Exception $e){
                 echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
-            }
+            }        
         } else if($divisi == 2) {
             try
             {

@@ -99,6 +99,7 @@
         </div>
         
         <!-- Modal body -->
+		<?php echo \Config\Services::validation()->listErrors() ?>
 		<form action="<?php echo base_url('Data/simpan'); ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
 			<p>Judul Data</p>

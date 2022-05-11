@@ -76,10 +76,6 @@ class Data_M extends Model
         return $data;
     }
 
-    public function tampildata_cari($cari){
-        return $this->table->like('data_name',$cari);
-    }
-
     public function cari($keyword) {
         return $this->table('list_data')->like('data_name', $keyword);
     }
