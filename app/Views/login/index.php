@@ -18,7 +18,7 @@
         rel="stylesheet">
 	<link rel="icon" href="<?= base_url('images/iconplus no bg.png') ?>"/>
     <!-- Custom styles for this template-->
-    <link href="<?= base_url();?>/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?= base_url();?>/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg">
-                                <div class="p-4">
+                                <div class="p-5">
                                     <div class="text-center">
 										<img src="<?php echo base_url('images/iconplus no bg.png'); ?>" alt="" width="150px" height="150px" />
                                     </div>
@@ -40,11 +40,7 @@
                                     <?= csrf_field(); ?>
                                         <div class="form-group">
                                             <?php
-                                            if (session()->getFlashdata('errIdUser')){
-                                                $isInvalidUser = 'is-invalid';
-                                            } else {
-                                                $isInvalidUser = '';
-                                            }
+                                            $isInvalidUser = (session()->getFlashdata('errIdUser')) ? 'is-invalid' : '';
                                             ?>
                                             <input type="text" name="iduser" class="form-control form-control-user" <?= $isInvalidUser ?> placeholder="Username" autofocus>
                                         <?php
@@ -63,7 +59,7 @@
                                             <?php
                                             if (session()->getFlashdata('errIdUser')){
                                                 echo '<div id="validationServer03Feedback" class="invalid-feedback">
-                                                ' . session()->getFlashdata('errPassword') .'
+                                                ' . session()->getFlashdata('errIdUser') .'
                                                 </div>';
                                             }
                                             ?>
