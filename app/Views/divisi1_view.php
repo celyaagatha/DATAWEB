@@ -102,9 +102,9 @@
 		<form action="<?php echo base_url('Data/simpan'); ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
 			<p>Judul Data</p>
-			<input type="text" name="data_name" id="data_name"/>
+			<input type="text" name="data_name" id="data_name" required/>
 			<div class="item" style="margin-bottom:15px;">
-			<select name="divisi" id="divisi">
+			<select name="divisi" id="divisi" required>
             <option value="">Pilih Divisi</option>
             <option value="1">Divisi 1</option>
             <option value="2">Divisi 2</option>

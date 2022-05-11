@@ -46,7 +46,7 @@
                                                 $isInvalidUser = '';
                                             }
                                             ?>
-                                            <input type="text" name="iduser" class="form-control form-control-user" <?= $isInvalidUser ?> placeholder="Username" autofocus>
+                                            <input type="text" name="iduser" class="form-control form-control-user" <?= $isInvalidUser ?> placeholder="Username" required autofocus>
                                         <?php
                                         if (session()->getFlashdata('errIdUser')){
                                             echo '<div id="validationServer03Feedback" class="invalid-feedback">
@@ -59,7 +59,7 @@
                                             <?php
                                             $isInvalidPassword = (session()->getFlashdata('errPassword')) ? 'is-invalid' : '';
                                             ?>
-                                            <input type="password" class="form-control form-control-user" <?= $isInvalidPassword ?> name="user_password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" <?= $isInvalidPassword ?> name="user_password" placeholder="Password" required>
                                             <?php
                                             if (session()->getFlashdata('errIdUser')){
                                                 echo '<div id="validationServer03Feedback" class="invalid-feedback">
