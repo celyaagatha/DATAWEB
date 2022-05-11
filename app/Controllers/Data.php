@@ -321,39 +321,39 @@ class Data extends BaseController
             {
                 $simpan = $this->datalist->simpanData($this->table,$data);
                 if($simpan){
-                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi2')."';</script>";
-                } else {
-                    echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi2')."';</script>";
+                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
+                } else if ($data_name != $data['data_name']){
+                    echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi1')."';</script>";
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi2')."';</script>";
+                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
             }
         } else if($divisi == 3) {
             try
             {
                 $simpan = $this->datalist->simpanData($this->table,$data);
                 if($simpan){
-                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi3')."';</script>";
-                } else {
-                    echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi3')."';</script>";
+                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
+                } else if ($data_name != $data['data_name']){
+                    echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi1')."';</script>";
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi3')."';</script>";
+                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
             }
         } else if($divisi == 4) {
             try
             {
                 $simpan = $this->datalist->simpanData($this->table,$data);
                 if($simpan){
-                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
-                } else {
-                    echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
+                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
+                } else if ($data_name != $data['data_name']){
+                    echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi1')."';</script>";
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi4')."';</script>";
+                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
             }
         }
     }
