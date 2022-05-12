@@ -318,7 +318,7 @@ class Data extends BaseController
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
+                echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi1')."';</script>";
             }        
         } else if($divisi == 2) {
             try
@@ -331,7 +331,7 @@ class Data extends BaseController
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi2')."';</script>";
+                echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi2')."';</script>";
             }
         } else if($divisi == 3) {
             try
@@ -344,7 +344,7 @@ class Data extends BaseController
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi3')."';</script>";
+                echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi3')."';</script>";
             }
         } else if($divisi == 4) {
             try
@@ -357,7 +357,7 @@ class Data extends BaseController
                 }
             }
             catch (\Exception $e){
-                echo "<script>alert('Data gagal disimpan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
+                echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
             }
         }
     }
