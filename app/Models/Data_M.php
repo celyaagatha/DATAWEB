@@ -50,7 +50,7 @@ class Data_M extends Model
 
     public function simpanData($table,$data)
     {
-        $this->db->table($table)->insert($data);
+        $simpan = $this->db->table($table)->insert($data);
 
         return true;
     }

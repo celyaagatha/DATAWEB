@@ -103,13 +103,8 @@
         <div class="modal-body">
 			<p>Judul Data</p>
 			<input type="text" name="data_name" id="data_name" required/>
-<<<<<<< HEAD
 			<div class="item" style="margin-bottom:15px;">
 			<select name="divisi" id="divisi" required>
-=======
-			<div class="item" style="margin-bottom:15px;" required>
-			<select name="divisi" id="divisi">
->>>>>>> 339b25c5d6d202f0ac6b04e1165d7e1475cc13fe
             <option value="">Pilih Divisi</option>
             <option value="1">Divisi 1</option>
             <option value="2">Divisi 2</option>
