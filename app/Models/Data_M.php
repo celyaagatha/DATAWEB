@@ -48,6 +48,16 @@ class Data_M extends Model
         return $result;
     }
 
+    public function getdata_divisi5() 
+    {
+        $query = $this->db->query("SELECT * FROM list_data WHERE divisi_id LIKE 5 ORDER BY tanggal DESC");
+        $result = [];
+        if ($query) {
+            $result = $query->getResult();
+        }
+        return $result;
+    }
+
     public function simpanData($table,$data)
     {
         $simpan = $this->db->table($table)->insert($data);

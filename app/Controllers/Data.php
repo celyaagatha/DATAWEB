@@ -68,7 +68,7 @@ class Data extends BaseController
         } 
         //$row = $result->getResult();
         $data = [
-            'title' => "Divisi 1",
+            'title' => "OpHar",
             'dataList' => $row,
             'pager' => $pager,
             'perPage' => $tampil,
@@ -112,7 +112,7 @@ class Data extends BaseController
         } 
         //$row = $result->getResult();
         $data = [
-            'title' => "Divisi 2",
+            'title' => "Asset",
             'dataList' => $row,
             'pager' => $pager,
             'perPage' => $tampil,
@@ -156,7 +156,7 @@ class Data extends BaseController
         } 
         //$row = $result->getResult();
         $data = [
-            'title' => "Divisi 3",
+            'title' => "Fasilitas",
             'dataList' => $row,
             'pager' => $pager,
             'perPage' => $tampil,
@@ -199,7 +199,7 @@ class Data extends BaseController
         } 
         //$row = $result->getResult();
         $data = [
-            'title' => "Divisi 4",
+            'title' => "Inventory",
             'dataList' => $row,
             'pager' => $pager,
             'perPage' => $tampil,
@@ -209,6 +209,50 @@ class Data extends BaseController
         ];
         
         return view ('divisi4_view', $data);
+    }
+
+    public function index_divisi5()
+    {
+        $db = \Config\Database::connect();
+        $pager = \Config\Services::pager();
+        $getdata = $this->datalist->getdata_divisi5();
+        $total = count($getdata);
+        $tampil = 10;
+        $page = isset($_GET['page']);
+        $keyword = $this->request->getVar("cari");
+
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+            $mulai = ($tampil * $page) - $tampil;
+            if($keyword) {
+                $sql = "SELECT * FROM list_data WHERE data_name LIKE '%$keyword%' AND divisi_id LIKE 5 ORDER BY tanggal DESC LIMIT $mulai,$tampil";
+            } else {
+                $sql = "SELECT * FROM list_data WHERE divisi_id LIKE 5 ORDER BY tanggal DESC LIMIT $mulai,$tampil";
+            }
+        } else {
+            if($keyword){
+                $sql = "SELECT * FROM list_data WHERE data_name LIKE '%$keyword%' AND divisi_id LIKE 5 ORDER BY tanggal DESC LIMIT 0,$tampil";
+            } else {
+                $sql = "SELECT * FROM list_data WHERE divisi_id LIKE 5 ORDER BY tanggal DESC LIMIT 0,$tampil";
+            }
+        }
+        $row = [];
+        $result = $db->query($sql);
+        if ($result) {
+            $row = $result->getResult();
+        } 
+        //$row = $result->getResult();
+        $data = [
+            'title' => "Collection",
+            'dataList' => $row,
+            'pager' => $pager,
+            'perPage' => $tampil,
+            'total' => $total,
+            'page' => $page,
+            'keyword' => $keyword
+        ];
+        
+        return view ('divisi5_view', $data);
     }
 
     public function hapus($id)
@@ -270,24 +314,23 @@ class Data extends BaseController
             catch (\Exception $e){
                 echo "<script>alert('Data tidak ditemukan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
             }
+        } else if($hapusFile['divisi_id'] == 5) {
+            try {
+                $hapus = $this->datalist->hapusData($this->table,$where);
+                if($hapus){
+                    echo "<script>alert('Data berhasil dihapus'); window.location='".base_url('/Data/index_divisi5')."';</script>";
+                } else {
+                    echo "<script>alert('Data gagal dihapus'); window.location='".base_url('/Data/index_divisi5')."';</script>";
+                }
+            }
+            catch (\Exception $e){
+                echo "<script>alert('Data tidak ditemukan'); window.location='".base_url('/Data/index_divisi5')."';</script>";
+            }
         }
     }
     public function simpan(){
-        // if (!$this->validate ([
-        //     'data_name' => 'is_unique[list_data.data_name]',            
-        //     'file' => [
-        //         'rules' => 'max_size[file,30750]',
-        //         'errors' => [
-        //             'max_size' => 'Ukuran file terlalu besar (maks 30 mb)'
-        //         ]
-        //     ]
-        // ])) {
-        //     $validation = \Config\Services::validation();
-        //     return redirect()->to('/Data/index_divisi1')->withInput()->with('validation', $validation);
-        // };
         $divisi = $this->request->getPost("divisi");
         $data_name = $this->request->getPost("data_name");
-        $data_exist = $this->datalist->cari($data_name);
 
         $divisi = $this->request->getPost("divisi");
         $fileData = $this->request->getFile("file");
@@ -358,6 +401,20 @@ class Data extends BaseController
             }
             catch (\Exception $e){
                 echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi4')."';</script>";
+            }
+        }
+        else if($divisi == 5) {
+            try
+            {
+                $simpan = $this->datalist->simpanData($this->table,$data);
+                if($simpan){
+                    echo "<script>alert('Data berhasil disimpan'); window.location='".base_url('/Data/index_divisi5')."';</script>";
+                } else if ($data_name != $data['data_name']){
+                    echo "<script>alert('Data sudah ada sebelumnya'); window.location='".base_url('/Data/index_divisi5')."';</script>";
+                }
+            }
+            catch (\Exception $e){
+                echo "<script>alert('Data sudah ada sebelumnya, Data gagal disimpan'); window.location='".base_url('/Data/index_divisi5')."';</script>";
             }
         }
     }
