@@ -27,15 +27,15 @@ class Data extends BaseController
         $getdata4 = $this->datalist->getdata_divisi4();
         $jumlah_divisi4 = count($getdata4);
 
-        $getdata4 = $this->datalist->getdata_divisi5();
-        $jumlah_divisi4 = count($getdata5);
+        $getdata5 = $this->datalist->getdata_divisi5();
+        $jumlah_divisi5 = count($getdata5);
 
         $data = array(
             'jumlah_divisi1' => $jumlah_divisi1,
             'jumlah_divisi2' => $jumlah_divisi2,
             'jumlah_divisi3' => $jumlah_divisi3,
             'jumlah_divisi4' => $jumlah_divisi4,
-            'jumlah_divisi4' => $jumlah_divisi5,
+            'jumlah_divisi5' => $jumlah_divisi5,
         );
         return view ('welcome_message', $data);
     }
