@@ -36,15 +36,15 @@
 					<span>Asset</span></a>
 				</li>
 				<li>
-					<a href="<?php echo site_url('/Data/index_divisi3'); ?>" class="active"><span class="las la-users"></span>
+					<a href="<?php echo site_url('/Data/index_divisi3'); ?>"><span class="las la-users"></span>
 					<span>Fasilitas</span></a>
 				</li>
 				<li>
-					<a href="<?php echo site_url('/Data/index_divisi4'); ?>"><span class="las la-users"></span>
+					<a href="<?php echo site_url('/Data/index_divisi4'); ?>" ><span class="las la-users"></span>
 					<span>Inventory</span></a>
 				</li>
 				<li>
-					<a href="<?php echo site_url('/Data/index_divisi5'); ?>"><span class="las la-users"></span>
+					<a href="<?php echo site_url('/Data/index_divisi5'); ?> " class="active"><span class="las la-users"></span>
 					<span>Collection</span></a>
 				</li>
 			</ul>

@@ -29,19 +29,23 @@
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi1'); ?>" ><span class="las la-users"></span>
-					<span>Divisi 1</span></a>
+					<span>OpHar</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi2'); ?>"><span class="las la-users"></span>
-					<span>Divisi 2</span></a>
+					<span>Asset</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi3'); ?>"><span class="las la-users"></span>
-					<span>Divisi 3</span></a>
+					<span>Fasilitas</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi4'); ?>" class="active"><span class="las la-users"></span>
-					<span>Divisi 4</span></a>
+					<span>Inventory</span></a>
+				</li>
+				<li>
+					<a href="<?php echo site_url('/Data/index_divisi5'); ?>"><span class="las la-users"></span>
+					<span>Collection</span></a>
 				</li>
 			</ul>
 		</div>
@@ -106,10 +110,11 @@
 			<div class="item" style="margin-bottom:15px;">
 			<select name="divisi" id="divisi" required>
             <option value="">Pilih Divisi</option>
-            <option value="1">Divisi 1</option>
-            <option value="2">Divisi 2</option>
-            <option value="3">Divisi 3</option>
-            <option value="4">Divisi 4</option>
+            <option value="1">OpHar</option>
+            <option value="2">Asset</option>
+            <option value="3">Fasilitas</option>
+            <option value="4">Inventory</option>
+			<option value="5">Collection</option>
         </select>
 		<p>Masukkan Link</p>
 		<input type="text" name="link" id="link"/>

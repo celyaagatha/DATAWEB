@@ -27,19 +27,23 @@
 				</li>
 				<li>
 				<a href="<?php echo site_url('/Data/index_divisi1'); ?>"><span class="las la-users"></span>
-					<span>Divisi 1</span></a>
+					<span>OpHar</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi2'); ?>"><span class="las la-users"></span>
-					<span>Divisi 2</span></a>
+					<span>Asset</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi3'); ?>"><span class="las la-users"></span>
-					<span>Divisi 3</span></a>
+					<span>Fasilitas</span></a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('/Data/index_divisi4'); ?>"><span class="las la-users"></span>
-					<span>Divisi 4</span></a>
+					<span>Inventory</span></a>
+				</li>
+				<li>
+					<a href="<?php echo site_url('/Data/index_divisi5'); ?>"><span class="las la-users"></span>
+					<span>Collection</span></a>
 				</li>
 			</ul>
 		</div>
@@ -67,7 +71,7 @@
 				<div class="card-single">
 					<div>
 						<h1><?php echo $jumlah_divisi1 ?></h1>
-						<span>Divisi 1</span>
+						<span>OpHar</span>
 					</div>
 					<div>
 						<span class="las la-clipboard-list"></span>
@@ -76,7 +80,7 @@
 				<div class="card-single">
 					<div>
 						<h1><?php echo $jumlah_divisi2 ?></h1>
-						<span>Divisi 2</span>
+						<span>Asset</span>
 					</div>
 					<div>
 						<span class="las la-clipboard-list"></span>
@@ -85,7 +89,7 @@
 				<div class="card-single">
 					<div>
 						<h1><?php echo $jumlah_divisi3 ?></h1>
-						<span>Divisi 3</span>
+						<span>Fasilitas</span>
 					</div>
 					<div>
 						<span class="las la-clipboard-list"></span>
@@ -94,7 +98,16 @@
 				<div class="card-single">
 					<div>
 						<h1><?php echo $jumlah_divisi4 ?></h1>
-						<span>Divisi 4</span>
+						<span>Inventory</span>
+					</div>
+					<div>
+						<span class="las la-clipboard-list"></span>
+					</div>
+				</div>
+				<div class="card-single">
+					<div>
+						<h1><?php echo $jumlah_divisi4 ?></h1>
+						<span>Collection</span>
 					</div>
 					<div>
 						<span class="las la-clipboard-list"></span>
