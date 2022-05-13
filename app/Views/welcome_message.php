@@ -106,7 +106,7 @@
 				</div>
 				<div class="card-single">
 					<div>
-						<h1><?php echo $jumlah_divisi4 ?></h1>
+						<h1><?php echo $jumlah_divisi5 ?></h1>
 						<span>Collection</span>
 					</div>
 					<div>
