@@ -184,7 +184,7 @@ main {
     color: var(--main-color);
 }
 
-.card-single div:first-child span {
+/* .card-single div:first-child span {
     color: var(--text-grey);
 }
 
@@ -197,7 +197,7 @@ main {
 .card-single:last-child div:first-child span,
 .card-single:last-child div:last-child span {
     color: #FFFFFF;
-}
+} */
 
 .recent-grid {
     margin-top: 3.5rem;
