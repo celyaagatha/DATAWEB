@@ -26,7 +26,7 @@
 				<tr>
 					<th width="200px">Divisi</th>
 					<th width="20px">:</th>
-					<td>Divisi <?php echo $dataList[0]['divisi_id']; ?></td>
+					<td><?php echo $title ?></td>
 				</tr>
 				<tr>
 					<th width="200px">Tanggal Upload</th>

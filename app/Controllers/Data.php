@@ -424,8 +424,23 @@ class Data extends BaseController
     }
 
     public function detail($id){
+        $divisi = $this->datalist->find($id);
+        if ($divisi['divisi_id'] == 1){
+            $title = "OpHar";
+        }
+        else if ($divisi['divisi_id'] == 2){
+            $title = "Asset";
+        }
+        else if ($divisi['divisi_id'] == 3){
+            $title = "Fasilitas";
+        }
+        else if ($divisi['divisi_id'] == 4){
+            $title = "Inventory";
+        }else if ($divisi['divisi_id'] == 5){
+            $title = "Collection";
+        }
         $data = [
-            'title' => "Lihat Data",
+            'title' => $title,
             'dataList' => $this->datalist->detailData($id)
         ];
         return view('view_file',$data);
